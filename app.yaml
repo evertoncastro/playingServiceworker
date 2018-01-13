@@ -1,0 +1,40 @@
+service: mypwa
+runtime: python27
+api_version: 1
+threadsafe: true
+
+# [START handlers]
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /css
+  static_dir: css
+
+- url: /fonts
+  static_dir: fonts
+
+- url: /js
+  static_dir: js
+
+- url: /img
+  static_dir: img      
+
+- url: /
+  static_files: index.html
+  upload: index.html
+
+- url: /service-worker.js
+  static_files: service-worker.js
+  upload: service-worker.js
+
+# [END handlers]
+
+# [START libraries]
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+# [END libraries]
